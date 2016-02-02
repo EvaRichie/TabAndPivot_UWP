@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="TabAndPivotControl.Controls.TabHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TabAndPivotControl.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    IsTabStop="False">
+
+    <StackPanel Padding="24" Background="{Binding Background}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateNarrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HeaderIcon.Visibility" Value="Visible"/>
+                        <Setter Target="HeaderText.Style" Value="{StaticResource TitleTextBlockStyle}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HeaderIcon.Visibility" Value="Collapsed"/>
+                        <Setter Target="HeaderText.Style" Value="{StaticResource TitleTextBlockStyle}"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <FontIcon x:Name="HeaderIcon" HorizontalAlignment="Center" Glyph="{Binding Glyph}"/>
+        <TextBlock x:Name="HeaderText" Text="{Binding Label}" Style="{StaticResource SubtitleTextBlockStyle}" MaxLines="2" LineStackingStrategy="BlockLineHeight" IsTextScaleFactorEnabled="False" TextAlignment="Center" HorizontalAlignment="Center"/>
+    </StackPanel>
+</UserControl>
