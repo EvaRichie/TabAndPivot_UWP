@@ -402,9 +402,12 @@
                                                                        Storyboard.TargetProperty="Foreground" >
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
                                             </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid"
+                                            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid"
                                                                        Storyboard.TargetProperty="Background" >
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>-->
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SelectedPivotBackgroundColor}"/>
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -523,7 +526,7 @@
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <controls:TabHeader Label="item 2" Glyph="&#xE719;" Background="#CC000000"/>
+                    <controls:TabHeader Label="item 2" Glyph="&#xE721;" Background="#CC000000"/>
                 </PivotItem.Header>
                 <Grid Background="Green">
 
@@ -531,7 +534,7 @@
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <controls:TabHeader Label="item 3" Glyph="&#xE719;" Background="#CC000000"/>
+                    <controls:TabHeader Label="item 3" Glyph="&#xE723;" Background="#CC000000"/>
                 </PivotItem.Header>
                 <Grid Background="Blue">
 
